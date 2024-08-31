@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ResetPasswordLoginAndLogout {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver(); // invoking browser
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
@@ -26,6 +26,7 @@ public class ResetPasswordLoginAndLogout {
 		System.out.println("errorMessage: " + errorMessage);
 
 		driver.findElement(By.linkText("Forgot your password?")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Messi");
 		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("12345+Messikumar123@hh.coms");
 		driver.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("9988998877");
@@ -44,6 +45,7 @@ public class ResetPasswordLoginAndLogout {
 		System.out.println("resettedPassword: " + resettedPassword);
 
 		driver.findElement(By.xpath("//button[@class='go-to-login-btn']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("input#inputUsername")).sendKeys("Messi");
 		driver.findElement(By.cssSelector("input[placeholder='Password']")).sendKeys(resettedPassword);
 		driver.findElement(By.cssSelector("button.signInBtn")).click();
