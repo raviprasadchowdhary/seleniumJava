@@ -1,0 +1,14 @@
+CSS Selector
+------------
+	Class Name:
+		tagName.className	-> 	Button.signInBtn
+	Id:
+		tagName#id	->	input#inputUsername
+	Generic:
+		element:	<input type="text" placeholder="Name">
+		tagName[attribute='value']	->	input[placeholder='Name']
+		
+X-Path
+------
+	element:	<input type="text" placeholder="Name">
+	//TagName[@attribute='value']	->	//input[@placeholder='name']
