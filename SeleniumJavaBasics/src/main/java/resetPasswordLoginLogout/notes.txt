@@ -12,3 +12,48 @@ X-Path
 ------
 	element:	<input type="text" placeholder="Name">
 	//TagName[@attribute='value']	->	//input[@placeholder='name']
+	
+	sibling-sibling traverse:
+	------------------------
+		Syntax:
+			//current-element/following-sibling::target-element
+			//current-element/preceding-sibling::target-element
+		Example:
+			HTML:
+				<div>
+				  <p>First Paragraph</p>
+				  <p>Second Paragraph</p>
+				  <p>Third Paragraph</p>
+				</div>
+			X-Paths:
+				//p[text()='First Paragraph']/following-sibling::p[1]
+				//p[text()='Second Paragraph']/preceding-sibling::p[1]
+
+		child-parent traverse:
+		------------------------
+			Syntax:
+				//child-element/parent::parent-element
+				
+				This is a shorthand to move up one level in the DOM hierarchy.
+				//child-element/..
+				
+			
+			Example:
+				HTML:
+					<div>
+					  <p>Paragraph</p>
+					</div>
+				X-paths:
+					//p/parent::div
+					
+					//p/..
+					
+Window Activities:
+-----------------
+
+		driver.manage().window().maximize();
+		driver.get("https://google.com/");
+		driver.navigate().to("https://rahulshettyacademy.com/");
+		driver.navigate().back();
+		driver.navigate().back();
+

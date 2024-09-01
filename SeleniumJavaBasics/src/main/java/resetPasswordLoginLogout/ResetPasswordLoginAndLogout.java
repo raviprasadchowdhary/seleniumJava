@@ -1,8 +1,6 @@
 package resetPasswordLoginLogout;
 
 import java.time.Duration;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
