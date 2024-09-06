@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import data.Data;
+
 public class AngularPage {
 	
 	/*
@@ -127,5 +129,20 @@ public class AngularPage {
 	//quitDriver
 	public static void quitDriver() {
 		driver.quit();
+	}
+	
+	//
+	public static void fillDetailsAndSubmit(String url, String name, String email, String password, String gender, String employmentStatus, String dateOfBirth) {
+		launchURL(url);
+		sendKeysInNameField(name);
+		sendKeysInEmailField(email);
+		sendKeysInPassword(password);
+		clickLoveIceCreamCheckBox();
+		clickGenderDropdown();
+		selectGender(gender);
+		employmentStatusRadioButtonSelection(employmentStatus);
+		sendKeysInDOBCalendar(dateOfBirth);
+		clickSubmit();
+		checkSuccessMessage("The Form has been submitted successfully!.");
 	}
 }
